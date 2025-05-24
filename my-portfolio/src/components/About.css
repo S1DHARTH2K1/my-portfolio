@@ -1,0 +1,222 @@
+.about-section {
+  padding: 100px 0;
+  background-color: #0a192f;
+  color: #ccd6f6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.section-title.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #4db5ff, #64ffda);
+  border-radius: 2px;
+}
+
+.about-content {
+  display: flex;
+  gap: 4rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease 0.2s;
+}
+
+.about-content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.image-container {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Removed the blue border */
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.image-container:hover img {
+  transform: scale(1.05);
+}
+
+.about-text {
+  flex: 2;
+}
+
+.about-text h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #e6f1ff;
+}
+
+.about-intro {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #8892b0;
+}
+
+.about-details {
+  margin-bottom: 2rem;
+}
+
+.detail-item {
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #4db5ff;
+  width: 100px;
+}
+
+.detail-value {
+  color: #8892b0;
+}
+
+.education, .internships, .hobbies {
+  margin-bottom: 2rem;
+}
+
+.education h4, .internships h4, .hobbies h4 {
+  font-size: 1.3rem;
+  color: #e6f1ff;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.education h4::after, .internships h4::after, .hobbies h4::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #4db5ff, transparent);
+}
+
+.education-item, .internship-item {
+  margin-bottom: 1.5rem;
+}
+
+.degree, .position {
+  font-weight: 600;
+  color: #ccd6f6;
+  margin-bottom: 0.3rem;
+}
+
+.institution, .company {
+  color: #8892b0;
+  margin-bottom: 0.3rem;
+}
+
+.date, .gpa {
+  color: #8892b0;
+  font-size: 0.9rem;
+}
+
+.hobbies-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.hobbies-list li {
+  background-color: rgba(77, 181, 255, 0.1);
+  color: #4db5ff;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.hobbies-list li:hover {
+  background-color: rgba(77, 181, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+/* Responsive styles */
+@media screen and (max-width: 992px) {
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .about-image {
+    margin-bottom: 2rem;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  .detail-item {
+    justify-content: center;
+  }
+
+  .hobbies-list {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .image-container {
+    width: 250px;
+    height: 250px;
+  }
+
+  .detail-item {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .detail-label {
+    width: auto;
+  }
+}
