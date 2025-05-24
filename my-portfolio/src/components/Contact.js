@@ -68,17 +68,11 @@ const Contact = () => {
     const templateID = 'template_contact'; // You'll need to create this template ID in EmailJS
     const userID = 'user_yourUserID'; // Your EmailJS User ID
 
-    // Log the form data being sent
-    console.log('Form data to be sent:', {
-      name: formData.name,
-      email: formData.email,
-      message: formData.message
-    });
+    // Preparing form data for email submission
 
     // Send the email using EmailJS
     emailjs.sendForm(serviceID, templateID, form.current, userID)
-      .then((result) => {
-        console.log('Email sent successfully:', result.text);
+      .then(() => {
         setFormSubmitted(true);
         setLoading(false);
 
@@ -92,8 +86,7 @@ const Contact = () => {
           setFormSubmitted(false);
         }, 3000);
       })
-      .catch((error) => {
-        console.error('Failed to send email:', error);
+      .catch(() => {
         setError('Failed to send message. Please try again later.');
         setLoading(false);
       });
