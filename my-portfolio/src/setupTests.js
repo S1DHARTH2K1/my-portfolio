@@ -1,2 +1,2 @@
-// Testing configuration for the portfolio website
+// Test setup
 import '@testing-library/jest-dom';

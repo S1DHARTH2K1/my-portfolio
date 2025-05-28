@@ -5,9 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import emailjs from 'emailjs-com';
 
-// Initialize EmailJS with your user ID
-// Replace 'user_yourUserID' with your actual EmailJS User ID
-emailjs.init('user_yourUserID');
+// EmailJS setup
+emailjs.init('BeKhR1Ja5YMBnyL9I');
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,5 +15,5 @@ root.render(
   </React.StrictMode>
 );
 
-// Performance monitoring for the portfolio website
+// Performance tracking
 reportWebVitals();

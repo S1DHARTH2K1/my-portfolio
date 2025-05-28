@@ -39,7 +39,7 @@ const Contact = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    // Map the form field names to our state properties
+    // Handle form field mapping for EmailJS
     const fieldMap = {
       'user_name': 'name',
       'user_email': 'email',
@@ -63,20 +63,18 @@ const Contact = () => {
     setLoading(true);
     setError(null);
 
-    // EmailJS service configuration
-    const serviceID = 'service_portfolio'; // You'll need to create this service ID in EmailJS
-    const templateID = 'template_contact'; // You'll need to create this template ID in EmailJS
-    const userID = 'user_yourUserID'; // Your EmailJS User ID
+    // My EmailJS configuration
+    const serviceID = 'service_lyt5s7k';
+    const templateID = 'template_trqtmd3';
+    const userID = 'BeKhR1Ja5YMBnyL9I';
 
-    // Preparing form data for email submission
-
-    // Send the email using EmailJS
+    // Send email through EmailJS
     emailjs.sendForm(serviceID, templateID, form.current, userID)
       .then(() => {
         setFormSubmitted(true);
         setLoading(false);
 
-        // Reset form after 3 seconds
+        // Clear form after success
         setTimeout(() => {
           setFormData({
             name: '',
@@ -143,7 +141,7 @@ const Contact = () => {
                 <input
                   type="text"
                   id="name"
-                  name="user_name" // Changed to match EmailJS template
+                  name="user_name"
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Your Name"
@@ -156,7 +154,7 @@ const Contact = () => {
                 <input
                   type="email"
                   id="email"
-                  name="user_email" // Changed to match EmailJS template
+                  name="user_email"
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Your Email"

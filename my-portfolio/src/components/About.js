@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './About.css';
-// Use a default avatar instead of importing an image that might not exist
 import profilePicture from '../assets/images/profile-placeholder.jpg';
 
 const About = () => {
